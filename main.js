@@ -34,16 +34,16 @@ const reset = (e) => {
     btnStart.textContent = 'Start';
     btnStart.dataset.active = 'false';
     meantime.textContent = '';
+    betweenTimeArr.length = 0;
     clearInterval(idI);
     lap = 1;
 
 }
 const addTime = () => {
-    betweenTimeArr.push("");
-    if (betweenTimeArr.length <= 10) {
+    if (betweenTimeArr.length < 10) {
         const p = document.createElement('p');
         p.textContent += `${lap}. ${(time / 100).toFixed(2)}`;
-        p.textContent.includes('0.00') ? alert('start stoper') : lap++ && meantime.appendChild(p);
+        p.textContent.includes('0.00') ? alert('start stoper') : lap++ && meantime.appendChild(p) && betweenTimeArr.push("");;
     } else alert("You can add only 10 times");
 }
 btnStart.addEventListener('click', stoper);
