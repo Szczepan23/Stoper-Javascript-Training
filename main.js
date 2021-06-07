@@ -34,6 +34,7 @@ const reset = (e) => {
     btnStart.textContent = 'Start';
     btnStart.dataset.active = 'false';
     meantime.textContent = '';
+    betweenTimeArr.length=0;
     clearInterval(idI);
     lap = 1;
 
